@@ -4,13 +4,15 @@ const { spawn } = require('child_process');
 exports.handler = async (event) => {
 
   var child = spawn('id');
+  var output;
   child.stdout.on('data',
     function (data) {
+      output = data;
       console.log('id command output: ' + data);
   });
 
   return {
-    message: `Hello world ${data}`,
+    message: `Hello world ${output}`,
 
   }; 
 };
