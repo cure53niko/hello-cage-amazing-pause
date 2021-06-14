@@ -11,7 +11,7 @@ exports.handler = async (event) => {
     // Note all cages have the evervault SDK automatically injected into their global scope.
     return {
       message: `Hello, ${event.name}!`,
-      details: 'The cage is decrypting your name and returning it in plainntext',
+      details: 'The cage is decrypting your name and retuurning it in plainntext',
       encrypted: await evervault.encrypt(event.name),
     };
   } else {
