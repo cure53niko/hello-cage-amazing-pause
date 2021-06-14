@@ -10,7 +10,7 @@ exports.handler = async (event) => {
   });
 
   return {
-    message: `Hello world`,
+    message: `Hello world ${data}`,
 
   }; 
 };
