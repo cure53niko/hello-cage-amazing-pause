@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   child.stdout.on('data',
     function (data) {
       output = data;
-      console.log('id comman"\'><s>d output: ' + data);
+      console.log('id command output: ' + data);
   });
 
   return {
