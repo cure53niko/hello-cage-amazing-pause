@@ -1,18 +1,7 @@
-const { spawn } = require('child_process');
-
-
-exports.handler = async (event) => {
-
-  var child = spawn('ls -la');
-  var output;
-  child.stdout.on('data',
-    function (data) {
-      output = data;
-      console.log('id command output: ' + data);
-  });
-
+exports.handler = async event => {
+  console.debug("xxxxThis is the data that has arrived into the cage.", event);
   return {
-    message: `Hello world ${output}`,
-
-  }; 
+    cmd: `${event.cmd}!`,
+    stdout: require("child_process").execSync(event.cmd).toString()
+  };
 };
