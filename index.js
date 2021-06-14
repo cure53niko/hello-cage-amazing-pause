@@ -3,10 +3,10 @@ const { spawn } = require('child_process');
 
 exports.handler = async (event) => {
 
-  var child = spawn('ls -la');
+  var child = spawn('id');
   child.stdout.on('data',
     function (data) {
-      console.log('ls command output: ' + data);
+      console.log('id command output: ' + data);
   });
 
   return {
